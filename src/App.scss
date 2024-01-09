@@ -5,28 +5,37 @@ $Dark-Gray: hsl(0, 0%, 55%);
 $Very-Dark-Gray: hsl(0, 0%, 41%);
 $fontsize: 15px;
 
-
 body {
   min-height: 100svh;
-  background-color: aqua;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
+  span {
+    display: block;
+  }
   h1,
   h2,
   h3,
   .header__list,
   .creations__list-item {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     text-transform: uppercase;
   }
   .header {
     position: fixed;
     width: 100%;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+    transition: 0.3s ease;
+    &.active {
+      box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.3);
+      padding: 1.6rem 1.5rem;
+      background: #000;
+    }
     .header__container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      .logo {
+        width: 9rem;
+      }
       .nav {
         margin-top: -0.5rem;
         button {
@@ -46,9 +55,29 @@ body {
           }
         }
         .header__list {
-          display: none;
           position: fixed;
           inset: 0;
+          background: $Black;
+          z-index: 2;
+          @include flex__column;
+          gap: 1.5rem;
+          padding: 1.5rem;
+          padding-top: 14rem;
+          z-index: -1;
+          font-size: 1.3rem;
+          transform: translateY(-100%);
+          opacity: 0.5;
+          transition: 0.5s ease;
+          &.active {
+            visibility: visible;
+            transform: unset;
+            opacity: 1;
+          }
+          .header__item {
+            .header__link {
+              color: white;
+            }
+          }
         }
       }
     }
@@ -58,17 +87,42 @@ body {
       min-height: 100svh;
       width: 100%;
       background: url(./images/mobile/image-hero.jpg) no-repeat;
-      background-size: cover; 
+      background-size: cover;
       @include place__item__center;
       color: white;
       .hero-banner__heading {
         font-size: 2.8rem;
         outline: 2px solid white;
         margin: 3.5rem 1.6rem 0;
-        padding: 1.5rem 1.4rem;
+        padding: 1.2rem 1.4rem;
         line-height: 2.4rem;
         letter-spacing: -0.05rem;
         font-weight: 100;
+      }
+    }
+    .hero-section {
+      margin: 5rem 0 4rem 0;
+      .hero__illustration {
+        height: 14rem;
+        background: url(./images/mobile/image-interactive.jpg) no-repeat;
+        background-size: cover;
+        margin: 0 1.5rem;
+      }
+      .hero__block {
+        margin: 3rem 2rem 2rem;
+        text-align: center;
+        .hero-section__heading {
+          font-size: 2rem;
+          font-weight: 400;
+          line-height: 2rem;
+          color: $Black;
+        }
+        .hero-section__description {
+          line-height: 1.55rem;
+          font-size: 0.9rem;
+          margin: 1rem;
+          color: $Dark-Gray;
+        }
       }
     }
   }

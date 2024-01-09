@@ -3,14 +3,29 @@ import Logo from "./images/logo.svg";
 import Menu from "./images/icon-hamburger.svg";
 import Close from "./images/icon-close.svg";
 import { MenuITems, socialMediaData, creationsData } from "./NavITems";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [active, setActive] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollDistance =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      setScrolled(scrollDistance > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <header className="header">
+      <header className={scrolled ? "header active" : "header"}>
         <div className="header__container">
           <a href="#" className="logo">
             <img src={Logo} alt="Loopstudios - Logo" />
@@ -45,7 +60,7 @@ function App() {
           </h2>
         </section>
         <section className="hero-section">
-          <div className="hero__illustrative"></div>
+          <div className="hero__illustration"></div>
           <div className="hero__block">
             <h2 className="hero-section__heading">
               The leader in interactive VR
@@ -61,7 +76,7 @@ function App() {
         <section className="creations">
           <h2 className="creations__heading">Our creations</h2>
 
-          <a href="#" className="creations__action-btn">
+          <a href="#" className="creations__button">
             See all
           </a>
 
