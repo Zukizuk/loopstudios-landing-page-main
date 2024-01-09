@@ -1,0 +1,75 @@
+@import "index";
+$White: hsl(0, 0%, 100%);
+$Black: hsl(0, 0%, 0%);
+$Dark-Gray: hsl(0, 0%, 55%);
+$Very-Dark-Gray: hsl(0, 0%, 41%);
+$fontsize: 15px;
+
+
+body {
+  min-height: 100svh;
+  background-color: aqua;
+  font-family: 'Alata', sans-serif;
+  h1,
+  h2,
+  h3,
+  .header__list,
+  .creations__list-item {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+  }
+  .header {
+    position: fixed;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    .header__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .nav {
+        margin-top: -0.5rem;
+        button {
+          all: unset;
+          vertical-align: middle;
+          width: 1.5rem;
+          height: 1.5rem;
+          &.menu__button {
+            background: url(./images/icon-hamburger.svg) no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+          &.close__button {
+            background: url(./images/icon-close.svg) no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+        }
+        .header__list {
+          display: none;
+          position: fixed;
+          inset: 0;
+        }
+      }
+    }
+  }
+  .main {
+    .hero-banner {
+      min-height: 100svh;
+      width: 100%;
+      background: url(./images/mobile/image-hero.jpg) no-repeat;
+      background-size: cover; 
+      @include place__item__center;
+      color: white;
+      .hero-banner__heading {
+        font-size: 2.8rem;
+        outline: 2px solid white;
+        margin: 3.5rem 1.6rem 0;
+        padding: 1.5rem 1.4rem;
+        line-height: 2.4rem;
+        letter-spacing: -0.05rem;
+        font-weight: 100;
+      }
+    }
+  }
+}
