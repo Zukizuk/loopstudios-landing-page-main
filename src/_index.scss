@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -46,7 +46,6 @@ footer {
   max-width: 100%;
 }
 
-
 @mixin place__item__center {
   display: grid;
   place-items: center;
@@ -72,4 +71,3 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-

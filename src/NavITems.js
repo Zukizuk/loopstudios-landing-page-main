@@ -59,7 +59,7 @@ export const socialMediaData = [
 export const creationsData = [
   { id: 1, firstLine: "Deep ", nextLine: "earth" },
   { id: 2, firstLine: "Night ", nextLine: "arcade" },
-  { id: 3, firstLine: "Soccer team VR", nextLine: "" },
+  { id: 3, firstLine: "Soccer ", nextLine: "team VR" },
   { id: 4, firstLine: "The ", nextLine: "grid" },
   { id: 5, firstLine: "From up ", nextLine: "above VR" },
   { id: 6, firstLine: "Pocket ", nextLine: "borealis" },
